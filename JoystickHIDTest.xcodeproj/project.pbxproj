@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD1AF6D3154F783500710648 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1AF6D2154F783500710648 /* Cocoa.framework */; };
+		BD1AF6DD154F783500710648 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD1AF6DB154F783500710648 /* InfoPlist.strings */; };
+		BD1AF6E0154F783500710648 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1AF6DF154F783500710648 /* main.m */; };
+		BD1AF6E3154F783500710648 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD1AF6E1154F783500710648 /* Credits.rtf */; };
+		BD1AF6E6154F783500710648 /* JoystickHIDTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1AF6E5154F783500710648 /* JoystickHIDTestAppDelegate.m */; };
+		BD1AF6E9154F783500710648 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1AF6E7154F783500710648 /* MainMenu.xib */; };
+		BDB42D23154F8F3C009B59FA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB42D22154F8F3C009B59FA /* IOKit.framework */; };
+		BDB42D301550389D009B59FA /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB42D2F1550389D009B59FA /* Joystick.m */; };
+		BDB42D3315504D23009B59FA /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB42D3215504D23009B59FA /* JoystickManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD1AF6CE154F783500710648 /* JoystickHIDTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoystickHIDTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1AF6D2154F783500710648 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BD1AF6D5154F783500710648 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BD1AF6D6154F783500710648 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BD1AF6D7154F783500710648 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BD1AF6DA154F783500710648 /* JoystickHIDTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JoystickHIDTest-Info.plist"; sourceTree = "<group>"; };
+		BD1AF6DC154F783500710648 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BD1AF6DE154F783500710648 /* JoystickHIDTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JoystickHIDTest-Prefix.pch"; sourceTree = "<group>"; };
+		BD1AF6DF154F783500710648 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD1AF6E2154F783500710648 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BD1AF6E4154F783500710648 /* JoystickHIDTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoystickHIDTestAppDelegate.h; sourceTree = "<group>"; };
+		BD1AF6E5154F783500710648 /* JoystickHIDTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoystickHIDTestAppDelegate.m; sourceTree = "<group>"; };
+		BD1AF6E8154F783500710648 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BDB42D22154F8F3C009B59FA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IOKit.framework; sourceTree = "<group>"; };
+		BDB42D2E1550389D009B59FA /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		BDB42D2F1550389D009B59FA /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
+		BDB42D3115504D23009B59FA /* JoystickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickManager.h; sourceTree = "<group>"; };
+		BDB42D3215504D23009B59FA /* JoystickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickManager.m; sourceTree = "<group>"; };
+		BDB42D4115508C99009B59FA /* JoystickNotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickNotificationDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD1AF6CB154F783500710648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1AF6D3154F783500710648 /* Cocoa.framework in Frameworks */,
+				BDB42D23154F8F3C009B59FA /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD1AF6C3154F783500710648 = {
+			isa = PBXGroup;
+			children = (
+				BD1AF6D8154F783500710648 /* JoystickHIDTest */,
+				BD1AF6D1154F783500710648 /* Frameworks */,
+				BD1AF6CF154F783500710648 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD1AF6CF154F783500710648 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD1AF6CE154F783500710648 /* JoystickHIDTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD1AF6D1154F783500710648 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD1AF6D2154F783500710648 /* Cocoa.framework */,
+				BD1AF6D4154F783500710648 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD1AF6D4154F783500710648 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDB42D22154F8F3C009B59FA /* IOKit.framework */,
+				BD1AF6D5154F783500710648 /* AppKit.framework */,
+				BD1AF6D6154F783500710648 /* CoreData.framework */,
+				BD1AF6D7154F783500710648 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BD1AF6D8154F783500710648 /* JoystickHIDTest */ = {
+			isa = PBXGroup;
+			children = (
+				BD1AF6E4154F783500710648 /* JoystickHIDTestAppDelegate.h */,
+				BD1AF6E5154F783500710648 /* JoystickHIDTestAppDelegate.m */,
+				BD1AF6E7154F783500710648 /* MainMenu.xib */,
+				BD1AF6D9154F783500710648 /* Supporting Files */,
+				BDB42D2E1550389D009B59FA /* Joystick.h */,
+				BDB42D4115508C99009B59FA /* JoystickNotificationDelegate.h */,
+				BDB42D2F1550389D009B59FA /* Joystick.m */,
+				BDB42D3115504D23009B59FA /* JoystickManager.h */,
+				BDB42D3215504D23009B59FA /* JoystickManager.m */,
+			);
+			path = JoystickHIDTest;
+			sourceTree = "<group>";
+		};
+		BD1AF6D9154F783500710648 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD1AF6DA154F783500710648 /* JoystickHIDTest-Info.plist */,
+				BD1AF6DB154F783500710648 /* InfoPlist.strings */,
+				BD1AF6DE154F783500710648 /* JoystickHIDTest-Prefix.pch */,
+				BD1AF6DF154F783500710648 /* main.m */,
+				BD1AF6E1154F783500710648 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD1AF6CD154F783500710648 /* JoystickHIDTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD1AF6EC154F783500710648 /* Build configuration list for PBXNativeTarget "JoystickHIDTest" */;
+			buildPhases = (
+				BD1AF6CA154F783500710648 /* Sources */,
+				BD1AF6CB154F783500710648 /* Frameworks */,
+				BD1AF6CC154F783500710648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoystickHIDTest;
+			productName = JoystickHIDTest;
+			productReference = BD1AF6CE154F783500710648 /* JoystickHIDTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD1AF6C5154F783500710648 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "We Get Signal";
+			};
+			buildConfigurationList = BD1AF6C8154F783500710648 /* Build configuration list for PBXProject "JoystickHIDTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BD1AF6C3154F783500710648;
+			productRefGroup = BD1AF6CF154F783500710648 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD1AF6CD154F783500710648 /* JoystickHIDTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD1AF6CC154F783500710648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1AF6DD154F783500710648 /* InfoPlist.strings in Resources */,
+				BD1AF6E3154F783500710648 /* Credits.rtf in Resources */,
+				BD1AF6E9154F783500710648 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD1AF6CA154F783500710648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1AF6E0154F783500710648 /* main.m in Sources */,
+				BD1AF6E6154F783500710648 /* JoystickHIDTestAppDelegate.m in Sources */,
+				BDB42D301550389D009B59FA /* Joystick.m in Sources */,
+				BDB42D3315504D23009B59FA /* JoystickManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD1AF6DB154F783500710648 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1AF6DC154F783500710648 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BD1AF6E1154F783500710648 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1AF6E2154F783500710648 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		BD1AF6E7154F783500710648 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1AF6E8154F783500710648 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD1AF6EA154F783500710648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BD1AF6EB154F783500710648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BD1AF6ED154F783500710648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoystickHIDTest/JoystickHIDTest-Prefix.pch";
+				INFOPLIST_FILE = "JoystickHIDTest/JoystickHIDTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BD1AF6EE154F783500710648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoystickHIDTest/JoystickHIDTest-Prefix.pch";
+				INFOPLIST_FILE = "JoystickHIDTest/JoystickHIDTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD1AF6C8154F783500710648 /* Build configuration list for PBXProject "JoystickHIDTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1AF6EA154F783500710648 /* Debug */,
+				BD1AF6EB154F783500710648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD1AF6EC154F783500710648 /* Build configuration list for PBXNativeTarget "JoystickHIDTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1AF6ED154F783500710648 /* Debug */,
+				BD1AF6EE154F783500710648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD1AF6C5154F783500710648 /* Project object */;
+}
