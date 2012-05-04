@@ -31,12 +31,6 @@
             
             int elementType = IOHIDElementGetType(thisElement);
             
-//            IOHIDElementCookie cooookie = IOHIDElementGetCookie(thisElement);
-//            NSLog(@"cookie: %d",cooookie);
-//            
-//            NSString *elementName = (NSString *)IOHIDElementGetName(thisElement);
-//            NSLog(@"name: %@",elementName);
-            
             if (elementType == kIOHIDElementTypeInput_Button) {
                 [tempButtons addObject:thisElement];
             } else if (elementType == kIOHIDElementTypeInput_Axis || elementType == kIOHIDElementTypeInput_Misc)
@@ -46,6 +40,7 @@
         buttons = [[NSArray arrayWithArray:tempButtons] retain];
         axes = [[NSArray arrayWithArray:tempAxes] retain];
         
+        NSLog(@"New device address: %p from %p",device,theDevice);
         NSLog(@"found %lu buttons and %lu axes",tempButtons.count,tempAxes.count);
         // For more detailed info there are Usage tables
         // eg: kHIDUsage_GD_X

@@ -78,6 +78,7 @@ void gamepadWasRemoved(void* inContext, IOReturn inResult, void* inSender, IOHID
 
 void gamepadAction(void* inContext, IOReturn inResult, void* inSender, IOHIDValueRef value) {
     
+    NSLog(@"gamepadAction from: %p",inSender);
     int joystickID = [[JoystickManager sharedInstance] deviceIDByReference:inSender];
     
     if (joystickID == -1) {
