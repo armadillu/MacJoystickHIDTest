@@ -45,11 +45,15 @@ static JoystickManager *instance;
 }
 
 - (int)deviceIDByReference:(IOHIDDeviceRef)deviceRef {
+    NSLog(@"Searching for device id by pointer: %p",deviceRef);
     for (id key in joysticks) {
         Joystick *thisJoystick = [joysticks objectForKey:key];
+        NSLog(@"Comparing to joystick id: %d with device: %p",[(NSNumber *)key intValue],[thisJoystick device]);
         
-        if ([thisJoystick device] == deviceRef)
+        if ([thisJoystick device] == deviceRef) {
+            NSLog(@"Found.");
             return [((NSNumber *)key) intValue];
+        }
     }
     
     return -1;
