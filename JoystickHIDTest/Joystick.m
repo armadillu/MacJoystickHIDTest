@@ -57,10 +57,13 @@
     IOHIDValueRef pValue;
     IOHIDDeviceGetValue(device, theElement, &pValue);
     
+    int elementUsage = IOHIDElementGetUsage(theElement);
+    
+    if (elementUsage == kHIDUsage_GD_Hatswitch) {
+        NSLog(@"THIS IS A HAT");
+    }
     
     int value = IOHIDValueGetIntegerValue(pValue);
-    
-    
     int i;
     
     if (elementType != kIOHIDElementTypeInput_Axis && elementType != kIOHIDElementTypeInput_Misc) {
@@ -79,6 +82,7 @@
         NSLog(@"Non-axis reported value of %d",value);
         return;
     }
+    
     
     
     NSLog(@"Axis reported value of %d",value);
