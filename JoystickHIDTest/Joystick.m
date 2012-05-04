@@ -54,17 +54,16 @@
 - (void)elementReportedChange:(IOHIDElementRef)theElement {
     
     int elementType = IOHIDElementGetType(theElement);
+    IOHIDValueRef pValue;
+    IOHIDDeviceGetValue(device, theElement, &pValue);
+    
+    
+    int value = IOHIDValueGetIntegerValue(pValue);
+    
     
     int i;
     
     if (elementType != kIOHIDElementTypeInput_Axis && elementType != kIOHIDElementTypeInput_Misc) {
-        IOHIDValueRef pValue;
-        IOHIDDeviceGetValue(device, theElement, &pValue);
-        
-        
-        int value = IOHIDValueGetIntegerValue(pValue);
-        
-        NSLog(@"Non-axis reported value of %d",value);
         
         
         for (i=0; i<delegates.count; ++i) {
@@ -76,8 +75,13 @@
                 [delegate joystickButtonReleased:[self getButtonOrAxesIndex:theElement]];
                  
         }
+        
+        NSLog(@"Non-axis reported value of %d",value);
         return;
     }
+    
+    
+    NSLog(@"Axis reported value of %d",value);
     
     for (i=0; i<delegates.count; ++i) {
         id <JoystickNotificationDelegate> delegate = [delegates objectAtIndex:i];
