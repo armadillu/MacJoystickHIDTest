@@ -31,12 +31,12 @@
             
             int elementType = IOHIDElementGetType(thisElement);
             
-            if (elementType == kIOHIDElementTypeInput_Button) {
-                [tempButtons addObject:thisElement];
-            } else if (elementType == kIOHIDElementTypeInput_Axis || elementType == kIOHIDElementTypeInput_Misc)
+            if (elementType == kIOHIDElementTypeInput_Axis || elementType == kIOHIDElementTypeInput_Misc) {
                 [tempAxes addObject:thisElement];
+            } else {
+                [tempButtons addObject:thisElement];
+            }
         }
-        
         buttons = [[NSArray arrayWithArray:tempButtons] retain];
         axes = [[NSArray arrayWithArray:tempAxes] retain];
         
@@ -57,11 +57,15 @@
     
     int i;
     
-    if (elementType == kIOHIDElementTypeInput_Button) {
+    if (elementType != kIOHIDElementTypeInput_Axis && elementType != kIOHIDElementTypeInput_Misc) {
         IOHIDValueRef pValue;
         IOHIDDeviceGetValue(device, theElement, &pValue);
         
+        
         int value = IOHIDValueGetIntegerValue(pValue);
+        
+        NSLog(@"Non-axis reported value of %d",value);
+        
         
         for (i=0; i<delegates.count; ++i) {
             id <JoystickNotificationDelegate> delegate = [delegates objectAtIndex:i];
