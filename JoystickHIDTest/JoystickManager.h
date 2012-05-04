@@ -21,7 +21,7 @@
     int                 joystickIDIndex;
 }
 
-@property id joystickAddedDelegate;
+@property(assign) id joystickAddedDelegate;
 
 + (JoystickManager *)sharedInstance;
 - (unsigned long)connectedJoysticks;

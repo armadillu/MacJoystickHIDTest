@@ -12,7 +12,7 @@
 
 @implementation JoystickHIDTestAppDelegate
 
-@synthesize window, horizontalSlider, verticalSlider;
+@synthesize window, horizontalSlider, verticalSlider, buttonMatrix;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
