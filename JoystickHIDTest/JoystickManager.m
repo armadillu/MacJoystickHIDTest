@@ -117,18 +117,30 @@ void gamepadWasAdded(void* inContext, IOReturn inResult, void* inSender, IOHIDDe
 
 -(void) setupGamepads {
     hidManager = IOHIDManagerCreate( kCFAllocatorDefault, kIOHIDOptionsTypeNone);
-    NSMutableDictionary* criterion = [[NSMutableDictionary alloc] init];
-    [criterion setObject: [NSNumber numberWithInt: kHIDPage_GenericDesktop] forKey: (NSString*)CFSTR(kIOHIDDeviceUsagePageKey)];
-    [criterion setObject: [NSNumber numberWithInt: kHIDUsage_GD_GamePad] forKey: (NSString*)CFSTR(kIOHIDDeviceUsageKey)];
     
-    IOHIDManagerSetDeviceMatching(hidManager, (CFDictionaryRef)criterion);
+    int usageKeys[] = { kHIDUsage_GD_GamePad,kHIDUsage_GD_Joystick,kHIDUsage_GD_MultiAxisController };
+    
+    int i;
+    
+    NSMutableArray *criterionSets = [NSMutableArray arrayWithCapacity:3];
+    
+    for (i=0; i<3; ++i) {
+        int usageKeyConstant = usageKeys[i];
+        NSMutableDictionary* criterion = [[NSMutableDictionary alloc] init];
+        [criterion setObject: [NSNumber numberWithInt: kHIDPage_GenericDesktop] forKey: (NSString*)CFSTR(kIOHIDDeviceUsagePageKey)];
+        [criterion setObject: [NSNumber numberWithInt: usageKeyConstant] forKey: (NSString*)CFSTR(kIOHIDDeviceUsageKey)];
+        [criterionSets addObject:criterion];
+        [criterion release];
+    }
+    
+	IOHIDManagerSetDeviceMatchingMultiple(hidManager, (CFArrayRef)criterionSets);
+    //IOHIDManagerSetDeviceMatching(hidManager, (CFDictionaryRef)criterion);
     IOHIDManagerRegisterDeviceMatchingCallback(hidManager, gamepadWasAdded, (void*)self);
     IOHIDManagerRegisterDeviceRemovalCallback(hidManager, gamepadWasRemoved, (void*)self);
     IOHIDManagerScheduleWithRunLoop(hidManager, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     IOReturn tIOReturn = IOHIDManagerOpen(hidManager, kIOHIDOptionsTypeNone);
     (void)tIOReturn; // to suppress warnings
     
-    [criterion release];
 }
 
 
