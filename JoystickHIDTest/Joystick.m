@@ -60,7 +60,8 @@
     int elementUsage = IOHIDElementGetUsage(theElement);
     
     if (elementUsage == kHIDUsage_GD_Hatswitch) {
-        NSLog(@"THIS IS A HAT");
+        int hatpositions = IOHIDElementGetLogicalMax(theElement);
+        NSLog(@"THIS IS A HAT WITH %d DIRECTIONS",hatpositions);
     }
     
     int value = IOHIDValueGetIntegerValue(pValue);
