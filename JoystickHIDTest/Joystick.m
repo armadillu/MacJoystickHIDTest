@@ -46,6 +46,7 @@
         }
         buttons = [[NSArray arrayWithArray:tempButtons] retain];
         axes = [[NSArray arrayWithArray:tempAxes] retain];
+        hats = [[NSArray arrayWithArray:tempHats] retain];
         
         NSLog(@"New device address: %p from %p",device,theDevice);
         NSLog(@"found %lu buttons, %lu axes and %lu hats",tempButtons.count,tempAxes.count,tempHats.count);
