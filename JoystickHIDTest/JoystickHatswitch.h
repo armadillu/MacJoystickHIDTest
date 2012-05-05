@@ -18,6 +18,9 @@
     
 }
 
+@property(readonly) IOHIDElementRef element;
+
 - (id)initWithElement:(IOHIDElementRef)theElement;
+- (void)checkValue:(int)value andDispatchButtonPressesWithIndexOffset:(int)offset toDelegate:(id<JoystickNotificationDelegate>)delegate;
 
 @end

@@ -10,6 +10,8 @@
 
 @implementation JoystickHatswitch
 
+@synthesize element;
+
 -(id)initWithElement:(IOHIDElementRef)theElement {
     
     self = [super init];
@@ -24,12 +26,12 @@
     
     element = theElement;
     
-    int logicalMin = (int)IOHIDElementGetLogicalMax(theElement);
-    int logicalMax = (int)IOHIDElementGetLogicalMin(theElement);
+    int logicalMax = (int)IOHIDElementGetLogicalMax(theElement);
+    int logicalMin = (int)IOHIDElementGetLogicalMin(theElement);
     
     directions = logicalMax-logicalMin;
     
-    NSLog(@"HatSwitch found. lMax: %d , lMin: %d",directions,logicalMax,logicalMin);
+    NSLog(@"HatSwitch found. lMax: %d , lMin: %d",logicalMax,logicalMin);
     
     return self;
 }

@@ -66,15 +66,28 @@
     
     int elementUsage = IOHIDElementGetUsage(theElement);
     int value = IOHIDValueGetIntegerValue(pValue);
-    int i;
+    int i,j;
     
     if (elementUsage == kHIDUsage_GD_Hatswitch) {
         
         // determine a unique offset. we assume 1000+ buttons is sufficient.
         // so all dpads will report 1000+(hats.indexOfObject(hatObject)*5)
         // 8 ways are interpreted as UP DOWN LEFT RIGHT so this is fine.
+        int offset = 1000;
+        JoystickHatswitch *hatswitch;
+        for (i=0; i<hats.count; ++i) {
+            hatswitch = [hats objectAtIndex:i];
+            
+            if ([hatswitch element] == theElement) {
+                offset = 1000+i*5;
+                break;
+            }
+        }
         
-        
+        for (i=0; i<delegates.count; ++i) {
+            id <JoystickNotificationDelegate> delegate = [delegates objectAtIndex:i];
+            [hatswitch checkValue:value andDispatchButtonPressesWithIndexOffset:offset toDelegate:delegate];
+        }
         
         return;
     }
