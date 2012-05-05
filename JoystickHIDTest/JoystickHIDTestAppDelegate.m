@@ -43,9 +43,7 @@
     [verticalSlider setDoubleValue:value];
 }
 
-- (void) joystickButtonPushed:(int)buttonIndex {
-  //  NSLog(@"button %d pushed", buttonIndex);
-    
+- (void) joystickButtonPushed:(int)buttonIndex onJoystick:(Joystick *)joystick {
     if (buttonIndex >= [[buttonMatrix cells] count])
         return;
     
@@ -54,7 +52,7 @@
     [buttonPushed setState:NSOnState];
 }
 
-- (void) joystickButtonReleased:(int)buttonIndex {
+- (void) joystickButtonReleased:(int)buttonIndex onJoystick:(Joystick *)joystick {
     NSButtonCell *buttonPushed = [[buttonMatrix cells] objectAtIndex:buttonIndex];
     
     [buttonPushed setState:NSOffState];

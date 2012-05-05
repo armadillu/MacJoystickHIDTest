@@ -12,15 +12,15 @@
 
 @interface JoystickHatswitch : NSObject  {
     IOHIDElementRef element;
+    Joystick        *owner;
     
     int directions;
     BOOL buttonStates[4];
-    
 }
 
 @property(readonly) IOHIDElementRef element;
 
-- (id)initWithElement:(IOHIDElementRef)theElement;
+-(id)initWithElement:(IOHIDElementRef)theElement andOwner:(Joystick *)theOwner;
 - (void)checkValue:(int)value andDispatchButtonPressesWithIndexOffset:(int)offset toDelegate:(id<JoystickNotificationDelegate>)delegate;
 
 @end

@@ -12,7 +12,7 @@
 
 @synthesize element;
 
--(id)initWithElement:(IOHIDElementRef)theElement {
+-(id)initWithElement:(IOHIDElementRef)theElement andOwner:(Joystick *)theOwner {
     
     self = [super init];
     
@@ -25,6 +25,7 @@
         NSLog(@"WARN: Invalid element given to JoystickHatswitch object");
     
     element = theElement;
+    owner = theOwner;
     
     int logicalMax = (int)IOHIDElementGetLogicalMax(theElement);
     int logicalMin = (int)IOHIDElementGetLogicalMin(theElement);
@@ -59,9 +60,9 @@
         if (newButtonStates[i] != buttonStates[i]) {
             // dispatch a button change event
             if (newButtonStates[i])
-                [delegate joystickButtonPushed:offset+i];
+                [delegate joystickButtonPushed:offset+i onJoystick:owner];
             else
-                [delegate joystickButtonReleased:offset+i];
+                [delegate joystickButtonReleased:offset+i onJoystick:owner];
         }
     
         buttonStates[i] = newButtonStates[i];

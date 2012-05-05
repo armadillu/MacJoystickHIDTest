@@ -35,7 +35,7 @@
             int elementUsage = IOHIDElementGetUsage(thisElement);
             
             if (elementUsage == kHIDUsage_GD_Hatswitch) {
-                JoystickHatswitch *hatSwitch = [[JoystickHatswitch alloc] initWithElement:thisElement];
+                JoystickHatswitch *hatSwitch = [[JoystickHatswitch alloc] initWithElement:thisElement andOwner:self];
                 [tempHats addObject:hatSwitch];
                 [hatSwitch release];
             } else if (elementType == kIOHIDElementTypeInput_Axis || elementType == kIOHIDElementTypeInput_Misc) {
@@ -74,7 +74,7 @@
         // determine a unique offset. index is buttons.count
         // so all dpads will report buttons.count+(hats.indexOfObject(hatObject)*5)
         // 8 ways are interpreted as UP DOWN LEFT RIGHT so this is fine.
-        int offset = [buttons count];
+        int offset = (int)[buttons count];
         JoystickHatswitch *hatswitch;
         for (i=0; i<hats.count; ++i) {
             hatswitch = [hats objectAtIndex:i];
@@ -101,9 +101,9 @@
             id <JoystickNotificationDelegate> delegate = [delegates objectAtIndex:i];
             
             if (value==1)
-                [delegate joystickButtonPushed:[self getElementIndex:theElement]];
+                [delegate joystickButtonPushed:[self getElementIndex:theElement] onJoystick:self];
             else
-                [delegate joystickButtonReleased:[self getElementIndex:theElement]];
+                [delegate joystickButtonReleased:[self getElementIndex:theElement] onJoystick:self];
                  
         }
         
@@ -178,8 +178,20 @@
     return (unsigned int)[axes count];
 }
 
+- (unsigned int)numHats {
+    return (unsigned int)[hats count];
+}
+
 - (void)dealloc
 {
+    [delegates release];
+    
+    [axes release];
+    [hats release];
+    [buttons release];
+    
+    [elements release];
+    
     [super dealloc];
 }
 

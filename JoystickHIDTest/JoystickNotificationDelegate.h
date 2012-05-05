@@ -13,7 +13,7 @@
 @protocol JoystickNotificationDelegate
 
 - (void)joystickStateChanged:(Joystick*)joystick;
-- (void)joystickButtonPushed:(int)buttonIndex;
-- (void)joystickButtonReleased:(int)buttonIndex;
+- (void)joystickButtonPushed:(int)buttonIndex onJoystick:(Joystick*)joystick;
+- (void)joystickButtonReleased:(int)buttonIndex onJoystick:(Joystick*)joystick;
 
 @end
