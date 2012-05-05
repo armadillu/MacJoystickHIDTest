@@ -19,6 +19,7 @@
     
     NSArray *axes;
     NSArray *buttons;
+    NSArray *hats;
     
     NSMutableArray *delegates;
 }
@@ -27,9 +28,10 @@
 
 @property(readonly) unsigned int numButtons;
 @property(readonly) unsigned int numAxes;
+@property(readonly) unsigned int numHats;
 
 - (id)initWithDevice:(IOHIDDeviceRef)theDevice;
-- (int)getButtonOrAxesIndex:(IOHIDElementRef)theElement;
+- (int)getElementIndex:(IOHIDElementRef)theElement;
 
 - (double)getRelativeValueOfAxesIndex:(int)index;
 

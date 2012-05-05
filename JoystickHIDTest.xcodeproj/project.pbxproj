@@ -13,6 +13,7 @@
 		BD1AF6E3154F783500710648 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD1AF6E1154F783500710648 /* Credits.rtf */; };
 		BD1AF6E6154F783500710648 /* JoystickHIDTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1AF6E5154F783500710648 /* JoystickHIDTestAppDelegate.m */; };
 		BD1AF6E9154F783500710648 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1AF6E7154F783500710648 /* MainMenu.xib */; };
+		BD9A0B101554A62F00FC13A1 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9A0B0F1554A62F00FC13A1 /* JoystickHatswitch.m */; };
 		BDB42D23154F8F3C009B59FA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB42D22154F8F3C009B59FA /* IOKit.framework */; };
 		BDB42D301550389D009B59FA /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB42D2F1550389D009B59FA /* Joystick.m */; };
 		BDB42D3315504D23009B59FA /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB42D3215504D23009B59FA /* JoystickManager.m */; };
@@ -32,6 +33,8 @@
 		BD1AF6E4154F783500710648 /* JoystickHIDTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoystickHIDTestAppDelegate.h; sourceTree = "<group>"; };
 		BD1AF6E5154F783500710648 /* JoystickHIDTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoystickHIDTestAppDelegate.m; sourceTree = "<group>"; };
 		BD1AF6E8154F783500710648 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BD9A0B0E1554A62F00FC13A1 /* JoystickHatswitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickHatswitch.h; sourceTree = "<group>"; };
+		BD9A0B0F1554A62F00FC13A1 /* JoystickHatswitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickHatswitch.m; sourceTree = "<group>"; };
 		BDB42D22154F8F3C009B59FA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IOKit.framework; sourceTree = "<group>"; };
 		BDB42D2E1550389D009B59FA /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		BDB42D2F1550389D009B59FA /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
@@ -98,8 +101,10 @@
 				BD1AF6E7154F783500710648 /* MainMenu.xib */,
 				BD1AF6D9154F783500710648 /* Supporting Files */,
 				BDB42D2E1550389D009B59FA /* Joystick.h */,
-				BDB42D4115508C99009B59FA /* JoystickNotificationDelegate.h */,
 				BDB42D2F1550389D009B59FA /* Joystick.m */,
+				BD9A0B0E1554A62F00FC13A1 /* JoystickHatswitch.h */,
+				BD9A0B0F1554A62F00FC13A1 /* JoystickHatswitch.m */,
+				BDB42D4115508C99009B59FA /* JoystickNotificationDelegate.h */,
 				BDB42D3115504D23009B59FA /* JoystickManager.h */,
 				BDB42D3215504D23009B59FA /* JoystickManager.m */,
 			);
@@ -186,6 +191,7 @@
 				BD1AF6E6154F783500710648 /* JoystickHIDTestAppDelegate.m in Sources */,
 				BDB42D301550389D009B59FA /* Joystick.m in Sources */,
 				BDB42D3315504D23009B59FA /* JoystickManager.m in Sources */,
+				BD9A0B101554A62F00FC13A1 /* JoystickHatswitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

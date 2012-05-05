@@ -1,0 +1,23 @@
+//
+//  JoystickHatswitch.h
+//  JoystickHIDTest
+//
+//  Created by John Stringham on 12-05-04.
+//  Copyright (c) 2012 We Get Signal. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <IOKit/hid/IOHIDLib.h>
+#import "JoystickNotificationDelegate.h"
+
+@interface JoystickHatswitch : NSObject  {
+    IOHIDElementRef element;
+    
+    int directions;
+    BOOL buttonStates[4];
+    
+}
+
+- (id)initWithElement:(IOHIDElementRef)theElement;
+
+@end
