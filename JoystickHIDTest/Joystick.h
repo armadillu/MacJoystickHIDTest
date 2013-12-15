@@ -12,9 +12,10 @@
 
 @interface Joystick : NSObject {
     IOHIDDeviceRef  device;
-    
+
     
 @private
+
     NSArray  *elements;
     
     NSArray *axes;
@@ -22,6 +23,10 @@
     NSArray *hats;
     
     NSMutableArray *delegates;
+	long vendorID;
+	long productID;
+	NSString * productName;
+	NSString * manufacturerName;
 }
 
 @property(readwrite) IOHIDDeviceRef device;
@@ -38,5 +43,10 @@
 - (void)elementReportedChange:(IOHIDElementRef)theElement;
 - (void)registerForNotications:(id <JoystickNotificationDelegate>)delegate;
 - (void)deregister:(id<JoystickNotificationDelegate>)delegate;
+
+- (long)vendorID;
+- (long)productID;
+- (NSString*)productName;
+- (NSString*)manufacturerName;
 
 @end

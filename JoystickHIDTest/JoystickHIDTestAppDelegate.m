@@ -18,10 +18,7 @@
 {
     // Insert code here to initialize your application
     
-    NSLog(@"yay");
-    
     JoystickManager *theJoystickManager = [JoystickManager sharedInstance];
-
     [theJoystickManager setJoystickAddedDelegate:self];
 }
 
