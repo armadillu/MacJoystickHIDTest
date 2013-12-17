@@ -24,7 +24,8 @@
 
 - (void)joystickAdded:(Joystick *)joystick {
     [joystick registerForNotications:self];
-    NSLog(@"added %@", joystick);
+    NSLog(@"Added Joystick: \"%@ (%@)\"", [joystick productName], [joystick manufacturerName] );
+
 }
 
 - (void)joystickStateChanged:(Joystick *)joystick {
